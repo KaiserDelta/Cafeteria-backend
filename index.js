@@ -8,6 +8,15 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors()); // Habilitar CORS para permitir llamadas desde Vercel
 
+// Configuración de CORS
+app.use(cors({
+  origin: 'https://cafeteria-frontend-o6qk.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+app.use(express.json());
+
 // Pool de conexión con soporte SSL para Aiven
 const conexion = mysql.createPool({
 host: process.env.DB_HOST,
