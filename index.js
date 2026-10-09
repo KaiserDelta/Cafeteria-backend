@@ -14,7 +14,7 @@ const corsOptions = {
       !origin ||
       origin === 'https://cafeteria-frontend-o6qk.vercel.app' ||
       origin.endsWith('.vercel.app') ||
-      origin.startsWith('http://localhost')
+      origin.startsWith('https://cafeteria-frontend-o6qk.vercel.app')
     ) {
       return callback(null, true);
     }
